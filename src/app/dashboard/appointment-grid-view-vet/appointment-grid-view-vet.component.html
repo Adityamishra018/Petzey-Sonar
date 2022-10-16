@@ -1,0 +1,110 @@
+<!-- <div>
+  <mat-grid-list cols="3.5">
+    <div *ngFor="let appointment of allAppointments;index as i">
+        <mat-grid-tile>
+          <mat-card class="card">
+            <ng-container>
+              <img
+                class="example-header-image"
+                mat-card-avatar
+                src="../../../assets/catttiee.png"
+                alt="petimage"
+              />
+            </ng-container>
+            <div class="content">
+              <ng-container>
+                <mat-card-header>
+                  <mat-card-title id="t2"
+                    ><strong style="margin-left: -20px">{{
+                      allPets[appointment.AppointmentId].PetName
+                    }}</strong></mat-card-title
+                  >
+                </mat-card-header>
+                <h4>
+                  {{ getGender(allPets[appointment.AppointmentId].Gender) }},{{
+                    getAge(allPets[appointment.AppointmentId].DOB)
+                  }}
+                  years
+                </h4>
+                <h2 style="margin-top: 0; margin-bottom: 0%">
+                  <strong>Owner: {{ allPetOwners[appointment.AppointmentId].Name }}</strong>
+                </h2>
+              </ng-container>
+            </div>
+
+            <div class="my-appdate-apptime">
+              <mat-card-content>
+                <strong
+                  ><h2>
+                    <span>{{ appointment.Date | date }}</span>
+                  </h2></strong
+                >
+                <strong
+                  ><h2>
+                    <span>{{ appointment.Date | date: "HH:mm" }}</span>
+                  </h2></strong
+                >
+              </mat-card-content>
+            </div>
+            <hr id="hr-bottom" />
+            <mat-card-actions>
+              <div class="link-container">
+                <div>
+                  <a
+                    class="card-link actionLink"
+                    (click)="viewDetail(appointment.AppointmentId)"
+                  >
+                    <span><h2 style="color: rgb(72, 69, 69)">Details</h2></span>
+                  </a>
+                </div>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+</div> -->
+
+<br />
+<div class="container-fluid">
+  <div class="row" style="text-align: center">
+    <div
+      class="col-md-3 mx-3 my-2"
+      style="width: 18rem"
+      *ngFor="let appointment of filteredAppointments; index as i"
+      (click)="viewDetail(appointment.AppointmentId)"
+    >
+      <div class="bg-white rounded shadow-sm py-5 px-4">
+        <img
+        [src]="'https://imagestoragepetzey.blob.core.windows.net/petzeyprofileimages/'+allPets[appointment.AppointmentId].ImageUrl+'?sp=racwdli&st=2022-10-14T04:00:13Z&se=2022-10-20T12:00:13Z&sv=2021-06-08&sr=c&sig=uaInFLodR%2B02yZ6hUKusp9Uaf%2BSFHfS5Rgg5EXgOcho%3D'"
+          alt=""
+          width="133"
+          style="width: 150px"
+          class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+        />
+        <h3 class="mb-0">
+          <b>{{ allPets[appointment.AppointmentId].PetName }}</b>
+        </h3>
+        <span class="small text-uppercase text-muted">{{
+          getGender(allPets[appointment.AppointmentId].Gender)
+        }}</span>
+        <h4 class="mb-0">
+          <b>{{ allPets[appointment.AppointmentId].DOB | agePipe }} Years</b>
+        </h4>
+        <h4 class="mb-0">
+          <b>Owner: {{ allPetOwners[appointment.AppointmentId].Name }}</b>
+        </h4>
+        <h4 class="mb-0">
+          <b>{{ appointment.Date | date }}</b>
+        </h4>
+        <h4 class="mb-0">
+          <b>{{ appointment.Date | date: "HH:mm" }}</b>
+        </h4>
+        <!-- <hr id="hr-bottom" /> -->
+        <!-- <div>
+                  <a class="card-link actionLink"   (click)="viewDetail(appointment.AppointmentId)"> <span><h2 style="color: rgb(72, 69, 69);">Details</h2></span> </a>
+                </div> -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+<!-- <div >
+  <mat-grid-list cols="3">
+<div *ngFor="let appointment of allAppointments;index as i;">
+    <mat-grid-tile>
+      <mat-card class="card">
+        <ng-container >
+        <img class="example-header-image" mat-card-avatar src="../../../assets/HeaderVet.jpg" alt="petimage">
+      </ng-container>
+
+        <div class="content">
+          <ng-container>
+            <mat-card-header>
+              <mat-card-title id="t2"><strong style="margin-left:-20px;">{{allVets[i].DoctorName}}</strong></mat-card-title>
+            </mat-card-header>
+            <h4>{{allVets[i].Clinic}}</h4>
+            <h2 style="margin-top: 0; margin-bottom:0%"><strong>Pet: {{allPets[i].PetName}}</strong></h2>
+          </ng-container>
+        </div>
+
+        <div class="my-appdate-apptime">
+          <mat-card-content >
+            <strong><h2><span>{{appointment.Date | date }}</span></h2></strong>
+            <strong><h2><span>{{appointment.Date | date:"HH:mm" }}</span></h2></strong>
+          </mat-card-content>
+        </div>
+        <hr id="hr-bottom" />
+        <mat-card-actions>
+          <div class="link-container">
+            <div>
+              <a class="card-link actionLink"  (click)="viewDetail()"> <span><h2 style="color: rgb(72, 69, 69);">Details</h2></span> </a>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </div>
+  </mat-grid-list>
+</div>  -->
+
+<br />
+<div class="container-fluid">
+  <div class="row" style="text-align: center">
+    <div
+      class="col-md-3 mx-3 my-2"
+      style="width: 18rem"
+      *ngFor="let appointment of filteredAppointments"
+      (click)="viewDetail(appointment.AppointmentId)"
+    >
+      <div class="bg-white rounded shadow-sm py-5 px-4">
+        <img
+          src="../../../assets/HeaderVet.jpg"
+          alt=""
+          width="133"
+          style="width: 150px"
+          class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+        />
+        <h3 class="mb-0">
+          <b>{{ allVets[appointment.AppointmentId].DoctorName }}</b>
+        </h3>
+        <span class="small text-uppercase text-muted">{{
+          allVets[appointment.AppointmentId].Clinic
+        }}</span>
+        <h4 class="mb-0">
+          <b>Pet Name:</b>{{ allPets[appointment.AppointmentId].PetName }}
+        </h4>
+        <h4 class="mb-0">
+          <b>{{ appointment.Date | date }}</b>
+        </h4>
+        <h4 class="mb-0">
+          <b>{{ appointment.Date | date: "HH:mm" }}</b>
+        </h4>
+        <!-- <hr id="hr-bottom" /> -->
+        <!-- <div>
+                  <a class="card-link actionLink"  (click)="viewDetail(appointment.AppointmentId)"> <span><h2 style="color: rgb(72, 69, 69);">Details</h2></span> </a>
+                </div> -->
+      </div>
+    </div>
+  </div>
+</div>

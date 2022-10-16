@@ -1,0 +1,63 @@
+<form #userForm="ngForm" (ngSubmit)="UpdateOwner(userForm.value)">
+  <div class="container mt-6 mb-6 d-flex justify-content-center">
+    <div class="card px-1 py-4">
+      <div class="card-body">
+        <h1 style="text-align: center">Edit Profile</h1>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <!-- <label for="name">Name</label> -->
+              <input
+                class="form-control"
+                type="text"
+                name="Name"
+                placeholder="Owner Name"
+                [ngModel]="CurOwner.Name"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="MobileNo"
+                  name="MobileNo"
+                  [ngModel]="CurOwner.MobileNo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Location"
+                  name="Location"
+                  [ngModel]="CurOwner.Location"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <!-- <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">By editing this information you agree to the</small> <a href="#" class="terms">Terms & Conditions</a> </div> -->
+        <button style="margin-left: 60px" class="btn btn-success" type="submit">
+          Confirm
+        </button>
+        <button class="btn btn-danger" routerLink="/dashboard/ownerprofile">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

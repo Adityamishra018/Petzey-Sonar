@@ -1,0 +1,151 @@
+<div class="container" style="margin-top: 10px; max-height: 100%">
+  <div class="row">
+    <div class="col-md-4" style="margin-left: 30%">
+      <div class="card-sl">
+        <div class="card-image">
+          <!-- <img
+                        src="https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" /> -->
+        </div>
+        <form
+          #medForm="ngForm"
+          (ngSubmit)="AddMedicine(medForm.value)"
+          style="width: 300px; height: 550px; background-color: white"
+        >
+          <div class="card-body">
+            <p style="font-size: 10px">Enter the details of medicine</p>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label style="color: #7f7f7f">Medicine Name</label>
+                  <input class="form-control" type="text" name="Name" ngModel />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label>Days</label>
+                  <input
+                    name="Days"
+                    class="form-control"
+                    type="number"
+                    ngModel
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-10">
+                <div>
+                  <label>Consume</label>
+                  <div>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <input
+                              type="radio"
+                              name="Instruction"
+                              id="BF"
+                              value="Before Food"
+                              ngModel
+                            />
+                          </td>
+                          <td>Before Food</td>
+                          <td>
+                            <input
+                              type="radio"
+                              name="Instruction"
+                              id="AF"
+                              value="After Food"
+                              ngModel
+                            />
+                          </td>
+                          <td>After Food</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label>Dosage</label>
+                  <div>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <input
+                              type="radio"
+                              name="Dosage"
+                              id="MR"
+                              value="Morning"
+                              ngModel
+                            />
+                          </td>
+                          <td>Morning</td>
+                          <td>
+                            <input
+                              type="radio"
+                              name="Dosage"
+                              id="AF"
+                              value="Afternoon"
+                              ngModel
+                            />
+                          </td>
+                          <td>Afternoon</td>
+                          <td>
+                            <input
+                              type="radio"
+                              name="Dosage"
+                              id="NI"
+                              value="Night"
+                              ngModel
+                            />
+                          </td>
+                          <td>Night</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label>Other Comments</label>
+                  <textarea
+                    name="comments"
+                    class="form-control"
+                    style="min-width: 100%"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <br />
+            <!-- <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">By editing this information you agree to the</small> <a href="#" class="terms">Terms & Conditions</a> </div> -->
+            <button
+              class="btn btn-danger"
+              style="float: left"
+              type="button"
+              (click)="NavigateBack()"
+            >
+              Cancel
+            </button>
+            <button
+              class="btn"
+              style="background-color: orange; float: right"
+              type="submit"
+            >
+              Confirm
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

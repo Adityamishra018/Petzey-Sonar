@@ -1,0 +1,129 @@
+<div class="container" style="margin-top: 10px; max-height: 100%">
+  <div class="row">
+    <div class="col-md-4" style="margin-left: 30%">
+      <div class="card-sl">
+        <div class="card-image">
+          <!-- <img
+                        src="https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" /> -->
+        </div>
+
+        <form #userForm="ngForm" (submit)="UpdateVet(userForm)">
+          <div class="container mt-6 mb-6 d-flex justify-content-center">
+            <div class="card px-1 py-4">
+              <div class="card-body">
+                <h1 style="text-align: center">Edit Profile</h1>
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <!-- <label for="name">Name</label> -->
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="doctor_name"
+                        placeholder="Doctor Name"
+                        [(ngModel)]="curVet.doctor_name"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          type="number"
+                          placeholder="Phone No"
+                          name="doctor_phone_number"
+                          [(ngModel)]="
+                            curVet.ContactDetails.doctor_phone_number
+                          "
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          type="text"
+                          placeholder="Email-Id"
+                          name="doctor_email_id"
+                          [(ngModel)]="curVet.ContactDetails.doctor_email_id"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          type="text"
+                          placeholder="Speciality"
+                          name="doctor_speciality"
+                          [(ngModel)]="curVet.doctor_speciality"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          type="text"
+                          placeholder="NPI Number"
+                          name="doctor_npi_no"
+                          [(ngModel)]="curVet.doctor_npi_no"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          type="text"
+                          placeholder="Clinic"
+                          name="doctor_ClinicAddress"
+                          [(ngModel)]="
+                            curVet.ContactDetails.doctor_ClinicAddress
+                          "
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br />
+                <!-- <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">By editing this information you agree to the</small> <a href="#" class="terms">Terms & Conditions</a> </div> -->
+                <button
+                  class="btn btn-success"
+                  type="submit"
+                  routeLink="vetrprofile"
+                >
+                  Confirm</button
+                ><span
+                  >&nbsp;<button class="btn btn-danger" routeLink="vetrprofile">
+                    Cancel
+                  </button></span
+                >
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

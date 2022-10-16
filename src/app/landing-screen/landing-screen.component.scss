@@ -1,0 +1,84 @@
+.posmo {
+  height: 25px;
+
+  width: 150px;
+}
+
+.image1 {
+  height: 52%;
+
+  width: 75%;
+}
+
+.image2 {
+  height: 80%;
+
+  width: 80%;
+}
+
+.row1 {
+  margin-top: 10%;
+}
+@media (min-width: 10px) {
+  .vl {
+    border-left: 3px solid rgb(148, 145, 145);
+    // height: 450px;
+    // margin-top: -25%;
+    // margin-left: 60%;
+    // position: fixed;
+    position: fixed;
+    left: 60%;
+    top: 18%;
+    min-width: 10px;
+    height: 450px;
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+.btn-color {
+  background-color: #0e1c36;
+  color: #fff;
+}
+
+.cardbody-color {
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+//
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+.intro {
+  height: 100%;
+}
+
+.left {
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 10%;
+  margin-left: 10%;
+  color: #fff;
+  max-width: 100%;
+}
+.right {
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  height: 100%;
+  color: #ffffff;
+}
+@media (max-width: 1200px) {
+  .left {
+    height: 50%;
+  }
+  .right {
+    height: 50%;
+  }
+}

@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="d-flex justify-content-between" style="margin-top: 30px">
+    <div>
+      <mat-card-title id="t1">Account Details</mat-card-title>
+      <mat-card-subtitle id="t3">Manage Your Account here</mat-card-subtitle>
+    </div>
+  </div>
+  <mat-card class="DoctorCard" style="width: 800px; height: 300px">
+    <mat-card-header style="width: 100%">
+      <button
+        class="btn btn-danger"
+        style="margin-left: 500px; width: 50px; height: 43px; color: black"
+        (click)="openDialog(curVet.VetId)"
+      >
+        Edit
+      </button>
+      <hr />
+      <img
+        class="example-header-image"
+        style="width: 100px; height: 100px; margin-top: 30px"
+        src="../../assets/HeaderVet.jpg"
+        alt="img"
+        mat-card-avatar
+      />
+    </mat-card-header>
+    <div class="my-appdate-apptime" style="margin-left: 150px">
+      <mat-card-content>
+        <table>
+          <tr>
+            <td style="padding: 0 15px">
+              <span id="name">
+                Name:<strong>{{ curVet.doctor_name }}</strong
+                ><br />
+              </span>
+            </td>
+            <td style="padding: 0 30px">
+              <span id="phnNo">
+                Mobile No:<strong>{{
+                  curVet.ContactDetails.doctor_phone_number
+                }}</strong>
+              </span>
+            </td>
+          </tr>
+          <br />
+          <tr>
+            <td style="padding: 0 15px">
+              <span id="nipNo">
+                NPINo:<strong>{{ curVet.doctor_npi_no }}</strong>
+              </span>
+            </td>
+            <td style="padding: 0 30px">
+              <span id="email">
+                Email:
+                <strong>{{ curVet.ContactDetails.doctor_email_id }}</strong>
+              </span>
+            </td>
+          </tr>
+          <br />
+          <tr>
+            <td style="padding: 0 15px">
+              <span id="speciality">
+                Speciality:<strong>{{ curVet.doctor_speciality }}</strong>
+              </span>
+            </td>
+            <td style="padding: 0 30px">
+              <span id="clinic">
+                Clinic:
+                <strong>{{
+                  curVet.ContactDetails.doctor_ClinicAddress
+                }}</strong>
+              </span>
+            </td>
+          </tr>
+          <br />
+        </table>
+
+        <br />
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,72 @@
+<form #userForm="ngForm" (ngSubmit)="UpdateOwner(userForm.value)">
+  <div class="container mt-6 mb-6 d-flex justify-content-center">
+    <div class="card px-1 py-4">
+      <div class="card-body">
+        <h1 style="text-align: center">Edit Profile</h1>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <input class="form-control" type="file" (change)="onChange($event)" />
+              <!-- <label for="name">Name</label> <input class="form-control" type="number" name="PetId" placeholder="PetId" disabled [ngModel]="curPet.PetId"> </div> -->
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <!-- <label for="name">Name</label> -->
+              <input class="form-control" type="text" name="PetName" placeholder="PetName" [ngModel]="curPet.PetName" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <!-- <label for="name">Name</label> -->
+              <input class="form-control" type="text" name="BloodGroup" placeholder="BloodGroup"
+                [ngModel]="curPet.BloodGroup" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <!-- <label for="name">Name</label> -->
+              <input class="form-control" type="date" name="DOB" placeholder="DOB" [ngModel]="curPet.DOB" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <!-- <label for="name">Name</label> -->
+              <input class="form-control" type="text" name="Breed" placeholder="Breed" [ngModel]="curPet.Breed" />
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+               <label for="name">Name</label>
+              <input
+                class="form-control"
+                type="text"
+                name="ImageUrl"
+                placeholder="ImageUrl"
+                [ngModel]="curPet.ImageUrl"
+              />
+            </div>
+          </div>
+        </div> -->
+
+        <br />
+        <!-- <div class=" d-flex flex-column text-center px-5 mt-3 mb-3"> <small class="agree-text">By editing this information you agree to the</small> <a href="#" class="terms">Terms & Conditions</a> </div> -->
+        <button style="margin-left: 60px" class="btn btn-success">
+          Confirm</button><span><button class="btn btn-danger" routeLink="petparentprofile">
+            Cancel
+          </button></span>
+      </div>
+    </div>
+  </div>
+</form>

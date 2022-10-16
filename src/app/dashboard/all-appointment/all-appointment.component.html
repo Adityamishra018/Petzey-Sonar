@@ -1,0 +1,63 @@
+<div *ngIf="url == 'allAppointmentDoctor'">
+  <app-appointment-status-card></app-appointment-status-card>
+</div>
+<hr style="margin-bottom: 0" />
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <div class="navbar-brand">
+        <b>All Appointments</b>
+      </div>
+      <div class="d-flex">
+        <div class="row">
+          <div class="col-auto align-self-center">
+            <form>
+              <div class="row g-2 align-items-center">
+                <div class="col-auto">
+                  <select
+                    #select
+                    name="filterAppointment"
+                    class="form-select form-select-sm btn btn-primary"
+                    style="
+                      background-color: white;
+                      color: grey;
+                      border-color: gray;
+                    "
+                    (change)="filter(select.value)"
+                  >
+                    <option selected>All</option>
+                    <option value="Cancelled">Cancelled</option>
+                    <option value="Closed">Closed</option>
+                    <option value="Confirmed">Confirmed</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div
+            *ngIf="url == 'allAppointmentDoctor'"
+            class="col-auto align-self-center"
+          >
+            <a
+              class="btn btn-sm select"
+              style="color: white"
+              [routerLink]="['/dashboard/addAppointmentForDoctor']"
+              ><em class="bi bi-plus-lg"></em>+ New Appointment</a
+            >
+          </div>
+          <div class="col-auto align-self-center icon-container icon"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<hr id="hr-bottom" />
+
+<div style="display: flex"></div>
+<div *ngIf="url == 'allAppointmentDoctor'; else pet">
+  <app-appointmentgridviewvet> </app-appointmentgridviewvet>
+</div>
+<ng-template #pet>
+  <app-appointmentgridviewpet> </app-appointmentgridviewpet>
+</ng-template>
